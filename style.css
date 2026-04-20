@@ -1,0 +1,259 @@
+/* CSE110 Lab 3 stylesheet */
+
+/* 3rd-party fonts */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Outfit:wght@400;600&display=swap");
+
+/* CSS Variables */
+:root {
+    --special-color: #1166ff;
+    --text-main: rgb(28, 37, 52);
+    --surface: hsl(210 100% 98%);
+    --soft-border: hsla(214, 45%, 45%, 0.28);
+}
+
+/* Universal selector */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: aliceblue;
+    color: var(--text-main, black);
+    font-family: "Outfit", Arial, sans-serif;
+}
+
+/* Class selector */
+.container {
+    width: 92%;
+    max-width: 72rem;
+    min-width: 320px;
+
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-left: auto;
+
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+
+    border-style: solid;
+    border-color: var(--soft-border, rgba(0, 0, 0, 0.2));
+    border-width: 2pt;
+    border-radius: 12px;
+
+    background-color: var(--surface, #fff);
+}
+
+#aacc:active{
+    color: red;
+}
+
+/* Keep and use .box from your original file */
+.box {
+    margin: 0.3rem 0.3rem 0.8rem 0.3rem;
+    padding: 0.8rem 1rem 0.8rem 1rem;
+    border: 2px dashed #2e5d9f;
+    border-radius: 10px;
+    display: block;
+    background-color: white;
+    position: relative;
+}
+
+/* descendant + class */
+.card span {
+    font-weight: 700;
+    font-size: 1cm;
+    position: relative;
+}
+
+/* ID selector */
+#a10086 {
+    text-align: center;
+}
+
+/* Attribute selector */
+[title="main-title"] {
+    border-bottom: 2px solid black;
+}
+
+/* Selector list */
+h1,
+h2 {
+    color: red;
+    font-family: "Merriweather", Georgia, serif;
+}
+
+/* Element.class selector */
+button.btn-primary {
+    background-color: var(--special-color, #3355cc);
+    color: white;
+    padding: 8px 12px 8px 12px;
+    border: 1px solid #16395f;
+    border-radius: 8px;
+}
+
+/* Pseudo-class */
+button:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Use .desciption name from your original file (typo kept intentionally) */
+.desciption {
+    color: var(--special-color, red);
+    width: fit-content;
+    max-width: max-content;
+    height: fit-content;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+}
+
+/* display values */
+.inline-note {
+    display: inline;
+}
+
+.inline-chip {
+    display: inline-block;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    border: 1px solid #8ba7cc;
+}
+
+.optional-note {
+    display: none;
+}
+
+/* Combinators */
+h1 + p {
+    color: aqua;
+}
+
+h1 ~ p {
+    color: rgb(0, 118, 152);
+}
+
+h1 ~ p.special {
+    color: yellowgreen;
+}
+
+.box > p {
+    text-indent: 10%;
+    font-size: 1em;
+}
+
+.box p {
+    text-decoration: underline;
+    text-align: left;
+}
+
+/* :has() selector */
+p:has(.card) {
+    background-color: rgba(210, 235, 255, 0.8);
+}
+
+/* Nested selectors (2023) */
+.box {
+    & h3 {
+        margin-top: 0;
+    }
+
+    & ul {
+        margin: 0.25rem 0 0 0;
+        padding-left: 1.2rem;
+    }
+
+    & li + li {
+        margin-top: 0.25rem;
+    }
+}
+
+/* Flexbox */
+.nav-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* Grid (3+ attrs, 3+ children) */
+.grid-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(13rem, 1fr));
+    grid-auto-rows: minmax(9rem, auto);
+    grid-auto-flow: row;
+    gap: 1rem;
+}
+
+/* Wider-gamut + color-mix */
+.mix-surface {
+    background-color: color-mix(in srgb, orange 12%, white);
+}
+
+@supports (color: color(display-p3 1 0 0)) {
+    #a10086 {
+        color: color(display-p3 0.15 0.35 0.77 / 1);
+    }
+}
+
+img.diagram {
+    width: auto;
+    max-width: 1320px;
+    min-width: 61m;
+    height: auto;
+    border: 2px solid #2f4f77;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .grid-board {
+        grid-template-columns: repeat(2, minmax(12rem, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        min-width: 0;
+        width: 96%;
+        padding: 0.8rem 0.7rem 1rem 0.7rem;
+    }
+
+    .grid-board {
+        grid-template-columns: 1fr;
+    }
+
+    img.diagram {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .desciption {
+        position: static;
+        margin-top: 0.5rem;
+    }
+}
+
+h1 ~ p[class="special"]{
+    color:yellowgreen;
+}
+
+p:has(.card){
+    color: antiquewhite;
+color: aqua;
+}
+
+h1 ~ p[class="special"]{
+    color:yellowgreen;
+}
+
+p:has(.card){
+    color: antiquewhite;
+}
