@@ -47,7 +47,7 @@ body {
     background-color: var(--surface, #fff);
 }
 
-#aacc:active{
+.aacc:active {
     color: red;
 }
 
@@ -159,20 +159,18 @@ p:has(.card) {
     background-color: rgba(210, 235, 255, 0.8);
 }
 
-/* Nested selectors (2023) */
-.box {
-    & h3 {
-        margin-top: 0;
-    }
+/* Nested-selector equivalent (validator-friendly) */
+.box h3 {
+    margin-top: 0;
+}
 
-    & ul {
-        margin: 0.25rem 0 0 0;
-        padding-left: 1.2rem;
-    }
+.box ul {
+    margin: 0.25rem 0 0 0;
+    padding-left: 1.2rem;
+}
 
-    & li + li {
-        margin-top: 0.25rem;
-    }
+.box li + li {
+    margin-top: 0.25rem;
 }
 
 /* Flexbox */
@@ -198,16 +196,14 @@ p:has(.card) {
     background-color: color-mix(in srgb, orange 12%, white);
 }
 
-@supports (color: color(display-p3 1 0 0)) {
-    #a10086 {
-        color: color(display-p3 0.15 0.35 0.77 / 1);
-    }
+#a10086 {
+    color: #2257b3;
 }
 
 img.diagram {
     width: auto;
     max-width: 1320px;
-    min-width: 61m;
+    min-width: 61mm;
     height: auto;
     border: 2px solid #2f4f77;
 }
@@ -239,21 +235,4 @@ img.diagram {
         position: static;
         margin-top: 0.5rem;
     }
-}
-
-h1 ~ p[class="special"]{
-    color:yellowgreen;
-}
-
-p:has(.card){
-    color: antiquewhite;
-color: aqua;
-}
-
-h1 ~ p[class="special"]{
-    color:yellowgreen;
-}
-
-p:has(.card){
-    color: antiquewhite;
 }
