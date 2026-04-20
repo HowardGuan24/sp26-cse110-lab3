@@ -3,81 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meeting minutes</title>
+    <title>Meeting Minutes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1> Team 18 Meeting </h1>
-        <h2> Topic: </h2> <h2> Date: </h2>
-    </header>
-    <nav>
-    <a href="#" >Team Page</a>
-    </nav>
-    <main>
-        <section>
-            <h2>Schedule</h2>
-            <h3>attendance list </h3>
-            <ul> 
-            <li> Person A </li>
-            <li> Person B </li>
-            <li> Person C </li>
-            </ul>
-            <h3>agenda</h3>
+    <div class="container mix-surface">
+        <header class="box" id="a10086">
+            <h1 class="title" title="main-title">Team 18 Meeting</h1>
+            <p class="inline-note">Topic: Sprint Planning</p>
+            <p class="special">Date: April 20, 2026</p>
+            <p>Recorder: Person A</p>
+        </header>
+
+        <nav class="box nav-flex" aria-label="Meeting sections">
+            <a class="inline-chip aacc"  href="#attendance">Attendance</a>
+            <a class="inline-chip" href="#agenda">Agenda</a>
+            <a class="inline-chip" href="#notes">Notes</a>
+            <a class="inline-chip" href="#summary">Summary</a>
+        </nav>
+
+        <main class="grid-board">
+            <section id="attendance" class="box">
+                <h2>Attendance List</h2>
+                <p>Present members:</p>
+                <ul>
+                    <li>Person A</li>
+                    <li>Person B</li>
+                    <li>Person C</li>
+                </ul>
+            </section>
+
+            <section id="agenda" class="box">
+                <h2>Agenda</h2>
+                <p>Main discussion topics for this meeting:</p>
+                <ul>
+                    <li>Kickoff updates</li>
+                    <li>Task breakdown</li>
+                    <li>Timeline check</li>
+                </ul>
+            </section>
+
+            <section id="notes" class="box">
+                <h2>Main Notes</h2>
+                <p>Unfinished business from last meeting:</p>
+                <ul>
+                    <li>Thing A</li>
+                    <li>Thing B</li>
+                    <li>Thing C</li>
+                </ul>
+            </section>
+
+            <section id="summary" class="box">
+                <h2>Summary</h2>
+                <p>New business and concerns:</p>
+                <ul>
+                    <li>Point A</li>
+                    <li>Point B</li>
+                    <li>Point C</li>
+                </ul>
+            </section>
+        </main>
+
+        <section class="box">
+            <h3>Process Visualization</h3>
             <p>
-            The main purpose for the meeting is <b>thing A</b> and then thing B.
+                <span class="card"><span>Diagram label</span></span>
             </p>
-        </section>
-        <section> <h2> Main Notes </h2 >
-            <h3>unfinished business from last meeting</h3>
-            <ul>  
-            <li> Thing A </li>
-            <li> Thing B </li>
-            <li> Thing C </li>
-            </ul>
-            <h3>new business that need to be talked about</h3>
-            <ul>  
-            <li> Thing A </li>
-            <li> Thing B </li>
-            <li> Thing C </li>
-            </ul>
-            <h3>comments</h3>
-            <ul> 
-            <li> point A </li>
-            <li> point B </li>
-            <li> point C </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Summary</h2>
-            <details>
-            <summary>   
-            here is the summary
-            </summary>
-            haha
-            </details>
+            <img
+                class="diagram"
+                src="https://m.media-amazon.com/images/I/51E8obATfiL._AC_SL1500_.jpg"
+                alt="Whiteboard style process sketch"
+            >
         </section>
 
-        <p>process visualization: <img src="https://m.media-amazon.com/images/I/51E8obATfiL._AC_SL1500_.jpg" width="200" height="200" alt="坤坤"></p>
-
-        <form>
-            <label>Your name and Idea:</label>
-            <input type="text" name="Your name" placeholder="Your name">
-            <input type="text" name="Your Idea" placeholder="Your Idea">
-            <button type="submit"> submit </button>  
+        <form class="box" action="#">
+            <label class="inline-note" for="member-name">Your name:</label>
+            <input id="member-name" type="text" name="memberName" placeholder="Your name">
+            <label class="inline-note" for="member-idea">Your idea:</label>
+            <input id="member-idea" type="text" name="memberIdea" placeholder="Your idea">
+            <span class="optional-note">optional helper</span>
+            <button class="btn-primary desciption" type="submit">Submit</button>
         </form>
-    </main>
+    </div>
 </body>
 </html>
-<!-- a title (e.g. "Pomodoro Timer First Brainstorm")
-subtitle for the meeting section/the topic of the meeting (e.g. "brainstorming", "check-ins", "documentation")
-subtitle for the date
-attendance list
-agenda of what the meeting will cover
-things that were unfinished business from last meeting
-things that are new business that need to be talked about
-any miscellaneous comments / questions / concerns that anyone would like to bring up
-pictures of any diagrams / architecture / things that were presented
-SWE meetings often have people diagram things on a whiteboard so we want those captured as well
-For the following two, you can simply take a 30 second pretend audio recording & video recording to use, we are just trying to get you familiar with the <audio> and <video> elements. Yes, you must have both audio and video elements, and yes, you can use the audio from the video you took for the audio element, it just has to be in a separate audio file.
-audio recording the meeting
-video recording of the meeting -->
