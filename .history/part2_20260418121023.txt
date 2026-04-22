@@ -10,4 +10,3 @@ question9: 2020_sucked
 question10: listenToPetalcore
 question11: ElaineFirst
 question12: iHeartWebDev
-issue3
